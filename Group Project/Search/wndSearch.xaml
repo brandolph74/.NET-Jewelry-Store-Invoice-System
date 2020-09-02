@@ -1,0 +1,45 @@
+﻿<Window x:Class="Group_Project.Search.wndSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project.Search"
+        mc:Ignorable="d"
+        Title="Search For Invoices" Height="597.962" Width="883.2" FontSize="16" IsVisibleChanged="Window_IsVisibleChanged">
+    <Window.Resources>
+        <Style  x:Key="comboStyle" TargetType="ComboBox">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property = "Width" Value="147"/>
+            <Setter Property = "Height" Value="36"/>
+            <Setter Property = "Background" Value="#FF898989"/>
+        </Style>
+        <Style  x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property = "Width" Value="116"/>
+            <Setter Property = "Height" Value="38"/>
+            <Setter Property = "FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+
+
+    <Canvas Background="White">
+
+        <DataGrid Name = "invoiceDataGrid" AutoGenerateColumns= "True" CanUserAddRows="False" HorizontalAlignment="Left" Height="440" Margin="49,63,0,0" VerticalAlignment="Top" Width="384" Grid.ColumnSpan="2" Background="#FFD1D1D1">
+        </DataGrid>
+        <GroupBox Header="More Options" Height="183" Canvas.Left="494" Canvas.Top="149" Width="329"/>
+        <ComboBox Name = "invoiceIDComboBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Height="36" Grid.Column="1" Canvas.Left="655" Canvas.Top="93" SelectionChanged="invoiceIDComboBox_SelectionChanged" Style="{StaticResource comboStyle}"/>
+        <Label Content="Specify Invoice ID: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36" Grid.Column="1" Canvas.Left="494" Canvas.Top="93"/>
+        <ComboBox Name = "dateComboBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource comboStyle}" Grid.Column="1" Canvas.Left="655" Canvas.Top="188" SelectionChanged="dateComboBox_SelectionChanged"/>
+        <Label Content="Specify Date: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36" Grid.Column="1" Canvas.Left="530" Canvas.Top="188"/>
+        <ComboBox Name ="chargeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource comboStyle}" Grid.Column="1" Canvas.Left="655" Canvas.Top="263" SelectionChanged="chargeComboBox_SelectionChanged"/>
+        <Label Content="Specify Charge: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Height="36" Grid.Column="1" Canvas.Left="513" Canvas.Top="263"/>
+        <Button Name = "cancelButton" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Style="{StaticResource buttonStyle}" Click="cancelButton_Click" Grid.Column="1" Canvas.Left="513" Canvas.Top="428" RenderTransformOrigin="0.216,-0.5"/>
+        <Button Name = "selectInvoiceButton" Content="Select Invoice" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource buttonStyle}" Click="selectInvoiceButton_Click" Grid.Column="1" Canvas.Left="686" Canvas.Top="428"/>
+        <Label Content="Invoice List" Canvas.Left="191" Canvas.Top="29" Width="148" RenderTransformOrigin="0.653,0.516" FontSize="18" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
+        <Button x:Name = "clearButton" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Style="{StaticResource buttonStyle}"  Canvas.Left="603" Canvas.Top="360" Click="clearButton_Click"/>
+
+
+
+
+    </Canvas>
+</Window>
